@@ -1,3 +1,3 @@
-FROM python:3.6.8
+FROM python:3.6.8-slim-stretch
 
-RUN echo 'cheers for wg' 
+RUN echo 'cheers for wg'
