@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  migrate:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - prod.conf
+    command:  python manage.py migrate
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - prod.conf
+    command: python manage.py runserver 0.0.0.0:80
+    ports:
+      - 8000:80
